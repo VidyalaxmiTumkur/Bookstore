@@ -1,0 +1,22 @@
+<mat-card>
+  <form (submit)="onSavePost(postForm)" #postForm="ngForm">
+    <mat-form-field>
+        <input matInput type="text" placeholder="Enter Book title" name="title" [ngModel] = "book?.title" required #title=ngModel>
+        <mat-error *ngIf="title.invalid">Book Title cannot be Empty.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" placeholder="Enter Book Author" name="author" [ngModel] = "book?.author" required #author=ngModel>
+      <mat-error *ngIf="author.invalid">Book Author cannot be Empty.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput type="text" placeholder="Enter Book Genre" name="genre" [ngModel] = "book?.genre" required #genre=ngModel>
+        <mat-error *ngIf="genre.invalid">Book Genre cannot be Empty.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <textarea matInput rows="6" placeholder="Enter Book Description" name="description" [ngModel] = "book?.description" required #description=ngModel></textarea>
+        <mat-error *ngIf="description.invalid">Book Description cannot be Empty.</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Post Book</button>
+  </form>
+</mat-card>
+

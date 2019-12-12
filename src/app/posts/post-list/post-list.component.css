@@ -1,0 +1,13 @@
+/* host selector which targets the elements itself */
+:host {
+  display: block;
+  margin-top: 20px;
+}
+
+.noAddedText{
+  text-align: center;
+}
+
+.editButton{
+  margin: 15px;
+}

@@ -1,0 +1,13 @@
+<mat-card *ngIf="books.length > 0">
+  <mat-card *ngFor="let book of books">
+    <mat-card-title>Book Title: {{ book.title }}</mat-card-title>
+    <mat-card-content>Author: {{ book.author }}</mat-card-content>
+    <mat-card-content>Genre: {{ book.genre }}</mat-card-content>
+    <mat-card-content>Description: {{ book.description }}</mat-card-content>
+    <mat-card-content>
+        <a class="editButton" mat-raised-button color="accent" [routerLink]="['/edit', book.id]">Edit</a>
+        <button mat-raised-button color="warn" (click)=" onDelete(book.id) ">Delete</button>
+    </mat-card-content>
+  </mat-card>
+</mat-card>
+<p class="noAddedText mat-body-2" *ngIf="books.length <= 0">No books are added!!!</p>
